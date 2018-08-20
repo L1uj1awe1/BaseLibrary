@@ -33,8 +33,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
 
-    if (!isBuildModule) {
-        implementation project(':libbaseres')
+    if (!isBuildLibrary) {
         implementation project(':libbaseui')
         implementation project(':libbasenetwork')
         implementation project(':libbasepicture')

@@ -1,4 +1,4 @@
-if (isBuildModule) {
+if (isBuildLibrary) {
     apply plugin: 'com.android.application'
 } else {
     apply plugin: 'com.android.library'
@@ -32,7 +32,7 @@ android {
 
     sourceSets {
         main {
-            if (isBuildModule) {
+            if (isBuildLibrary) {
                 manifest.srcFile 'src/main/manifest/debug/AndroidManifest.xml'
             } else {
                 manifest.srcFile 'src/main/manifest/release/AndroidManifest.xml'
