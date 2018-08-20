@@ -1,4 +1,8 @@
-apply plugin: 'com.android.library'
+if (isBuildModule) {
+    apply plugin: 'com.android.application'
+} else {
+    apply plugin: 'com.android.library'
+}
 
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
@@ -25,6 +29,16 @@ android {
     }
 
     resourcePrefix "libbaseres_"
+
+    sourceSets {
+        main {
+            if (isBuildModule) {
+                manifest.srcFile 'src/main/manifest/debug/AndroidManifest.xml'
+            } else {
+                manifest.srcFile 'src/main/manifest/release/AndroidManifest.xml'
+            }
+        }
+    }
 }
 
 dependencies {
