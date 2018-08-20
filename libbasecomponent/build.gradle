@@ -1,19 +1,25 @@
-apply plugin: 'com.android.application'
+if (isBuildModule) {
+    apply plugin: 'com.android.application'
+} else {
+    apply plugin: 'com.android.library'
+}
 
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion 26
     buildToolsVersion "27.0.3"
+
+
     defaultConfig {
-        applicationId "com.readboy.baselibrary"
         minSdkVersion 19
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
+
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
     }
     buildTypes {
         release {
@@ -21,24 +27,28 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    resourcePrefix "libbasecomponent_"
+
+    sourceSets {
+        main {
+            if (isBuildModule) {
+                manifest.srcFile 'src/main/manifest/debug/AndroidManifest.xml'
+            } else {
+                manifest.srcFile 'src/main/manifest/release/AndroidManifest.xml'
+            }
+        }
+    }
 }
 
 dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
     androidTestImplementation('com.android.support.test.espresso:espresso-core:3.0.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+
     implementation 'com.android.support:appcompat-v7:26.1.0'
     testImplementation 'junit:junit:4.12'
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
-
-    if (!isBuildModule) {
-        implementation project(':libbaseres')
-        implementation project(':libbaseui')
-        implementation project(':libbasenetwork')
-        implementation project(':libbasepicture')
-        implementation project(':libbasedatabase')
-        implementation project(':libbasecomponent')
-    }
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
 }
