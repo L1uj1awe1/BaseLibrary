@@ -1,6 +1,6 @@
 <resources>
 
-    <style name="LibBaseResAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="libbasecomponent_LibBaseResAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="android:windowActionBar">false</item>
