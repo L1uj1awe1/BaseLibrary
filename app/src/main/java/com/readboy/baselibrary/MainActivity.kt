@@ -3,6 +3,7 @@ package com.readboy.baselibrary
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.readboy.ibbasenetwork.LibBaseNetworkActivity
 import com.readboy.libbaseres.LibBaseResActivity
 import com.readboy.libbaseui.BaseUIActivity
 import kotlinx.android.synthetic.main.activity_main.*
@@ -20,7 +21,7 @@ class MainActivity : AppCompatActivity() {
 
         btn.setOnClickListener {
             val i = Intent()
-            startActivity(Intent(this, BaseUIActivity::class.java))
+            startActivity(Intent(this, LibBaseNetworkActivity::class.java))
         }
     }
 }

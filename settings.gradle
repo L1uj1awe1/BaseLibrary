@@ -1,1 +1,1 @@
-include ':app', ':libbaseres', ':libbaseui'
+include ':app', ':libbaseres', ':libbaseui', ':libbasenetwork'
