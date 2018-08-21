@@ -39,4 +39,5 @@ dependencies {
 
     implementation 'com.readboy.baselibrary:network:1.0.0'
     implementation 'com.readboy.baselibrary:ui:1.0.0'
+    implementation 'com.readboy.baselibrary:database:1.0.0'
 }

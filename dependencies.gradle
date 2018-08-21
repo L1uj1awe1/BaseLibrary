@@ -6,9 +6,9 @@ ext {
 
     isBuildLibraryNetwork = true
 
-    isBuildLibraryDatabase = true
+    isBuildLibraryDatabase = false
 
-    isBuildLibraryUI = false
+    isBuildLibraryUI = true
 
     isBuildLibraryComponent = true
 
