@@ -7,16 +7,16 @@ interface DemoService {
 
     /**
      * @aim 根据公交号码获取路线信息
-     * @param handlerName GetLineListByLineName
-     * @param key 公交号码，例如：8路
+     * @param id 线路id
+     * @param fromStation 方向
      * @param _ 时间戳 System.currentTimeMillis()
      */
-    @GET("Handlers/BusQuery.ashx")
+    @GET("RealTime/GetRealTime")
     fun demoRequest(
-            @Query("handlerName") handlerName: String,
-            @Query("key") key: String,
+            @Query("id") id: String,
+            @Query("fromStation") fromStation: String,
             @Query("_") timestamp: Long
-    ): Observable<DemoBean>
+    ): Observable<BusStatusBean>
 }
 
 object DemoApi {

@@ -24,7 +24,7 @@ class LibBaseNetworkActivity : AppCompatActivity() {
 
     private fun requestDemoCode() {
         try {
-            DemoApi.server.demoRequest("GetLineListByLineName", "K1", System.currentTimeMillis())
+            DemoApi.server.demoRequest("B9", "前山总站", System.currentTimeMillis())
                     .doOnSubscribe {
                         Log.e(TAG, "doOnSubscribe 请求前回调")
                     }
