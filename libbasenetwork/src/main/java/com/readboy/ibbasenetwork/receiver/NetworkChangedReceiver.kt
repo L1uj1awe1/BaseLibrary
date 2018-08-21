@@ -84,11 +84,11 @@ class NetworkChangedReceiver: BroadcastReceiver() {
                             onConnectivityListener?.onNetworkMobileEnable()
                         }
                     } else {
-                        Log.i(TAG_ConnectivityManager, "当前没有网络连接，请确保你已经打开网络")
+                        Log.i(TAG_ConnectivityManager, "当前没有网络连接，请确保您已经打开网络")
                         onConnectivityListener?.onNetworkDisable()
                     }
                 } else {
-                    Log.i(TAG_ConnectivityManager, "当前没有网络连接，请确保你已经打开网络")
+                    Log.i(TAG_ConnectivityManager, "当前没有网络连接，请确保您已经打开网络")
                     onConnectivityListener?.onNetworkDisable()
                 }
             }
