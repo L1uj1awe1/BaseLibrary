@@ -1,4 +1,4 @@
-package com.readboy.network.data
+package com.readboy.ibbasenetwork.retrofit
 
 /**
  * Created by liujiawei on 18-6-27.

@@ -1,6 +1,5 @@
 package com.readboy.ibbasenetwork.retrofit
 
-import com.readboy.network.data.DemoBean
 import io.reactivex.Observable
 import retrofit2.http.*
 
