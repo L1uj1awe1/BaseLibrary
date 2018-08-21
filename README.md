@@ -92,9 +92,22 @@ if (isBuildLibrary) {
 ```
 
  - Library -> build-gradle 配置 Bintray 上传信息
+```gradle
+ apply plugin: 'com.novoda.bintray-release'
+```
 
 ```gradle
-//生成源文件
+
+//    lintOptions {
+//        abortOnError false
+//    }
+//    // javadoc编译失败，可以考虑去除javadoc
+//    tasks.withType(Javadoc).all {
+//        enabled = false
+//    }
+
+    if (!isBuildLibrary) {
+        //生成源文件
         task sourcesJar(type: Jar) {
             from android.sourceSets.main.java.srcDirs
             classifier = 'sources'
@@ -127,27 +140,40 @@ if (isBuildLibrary) {
         }
         //发布到 Bintray
         publish {
-            userOrg = 'futuredeveloper' //bintray.com 注册的用户名
+            userOrg = 'f1ght1n9' //organization id 企业名称或ID
             groupId = 'com.readboy.baselibrary' //以后访问 jcenter上此项目的路径，一般和库项目的包名一致
-            artifactId = 'BaseLibrary' //bintray.com 创建的 Package 名
+            artifactId = 'network' //bintray.com 创建的 Package 名
             publishVersion = '1.0.0' //版本号
-            desc = '这是一个不认真的版本说明' //版本说明，随意
+            desc = '任何关于网络服务、组件、工具的库' //版本说明，随意
             website = 'https://github.com/L1uj1awe1/BaseLibrary.git' //关于这个开源项目的网站，随意
         }
+    }
 ```
 
 3、执行命令
 
 ```gradle
-./gradlew clean build generatePomFileForReleasePublication bintrayUpload -PbintrayUser=PACKAGE_NAME -PbintrayKey=API_KEY -PdryRun=false
+./gradlew clean build generatePomFileForReleasePublication bintrayUpload -PbintrayUser=USER_NAME -PbintrayKey=API_KEY -PdryRun=false
 ```
 
-PACKAGE_NAME: Bintray创建项目的Package Name
+USER_NAME: Bintray的用户名
 API_KEY: Bintray账号的API KEY
 
 如果成功，如果命令执行成功，会看到 BUILD SUCCESSFUL；否则根据错误提示解决错误，再重新执行命令。
 
-4、登录 Bintray，
+4、登录 Bintray，进入创建的Package 获取 Maven Uri 和 compile url，配置到需要引入library的Project -> root
+```gradle
+allprojects {
+    repositories {
+        maven { url 'https://f1ght1n9.bintray.com/maven' }
+    }
+}
+```
+
+在app 或者 Module 中引入
+```gradle
+    implementation 'com.readboy.baselibrary:network:1.0.0'
+```
 
 
-https://drprincess.github.io/2018/02/01/Android-%E5%8F%91%E5%B8%83%E9%A1%B9%E7%9B%AE%E5%88%B0%E5%88%B0%20JCenter%20%E4%BB%93%E5%BA%93/  明日再战
+5、[参考](https://drprincess.github.io/2018/02/01/Android-%E5%8F%91%E5%B8%83%E9%A1%B9%E7%9B%AE%E5%88%B0%E5%88%B0%20JCenter%20%E4%BB%93%E5%BA%93/)
