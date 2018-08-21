@@ -1,7 +1,8 @@
-if (isBuildLibrary) {
+if (isBuildLibraryComponent) {
     apply plugin: 'com.android.application'
 } else {
     apply plugin: 'com.android.library'
+    apply plugin: 'com.novoda.bintray-release'
 }
 
 apply plugin: 'kotlin-android'
@@ -28,26 +29,66 @@ android {
         }
     }
 
-    lintOptions {
-        abortOnError false
-    }
-
-    //解决 JavaDoc 中文注释生成失败的问题
-    tasks.withType(Javadoc) {
-        options.addStringOption('Xdoclint:none', '-quiet')
-        options.addStringOption('encoding', 'UTF-8')
-        options.addStringOption('charSet', 'UTF-8')
-    }
-
     resourcePrefix "libbasecomponent_"
 
     sourceSets {
         main {
-            if (isBuildLibrary) {
+            if (isBuildLibraryComponent) {
                 manifest.srcFile 'src/main/manifest/debug/AndroidManifest.xml'
             } else {
                 manifest.srcFile 'src/main/manifest/release/AndroidManifest.xml'
             }
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    tasks.withType(Javadoc).all {
+        enabled = false
+    }
+
+    if (!isBuildLibraryComponent) {
+        //生成源文件
+        task sourcesJar(type: Jar) {
+            from android.sourceSets.main.java.srcDirs
+            classifier = 'sources'
+        }
+        //生成Javadoc文档
+        task javadoc(type: Javadoc) {
+            source = android.sourceSets.main.java.srcDirs
+            classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+        }
+        //文档打包成jar
+        task javadocJar(type: Jar, dependsOn: javadoc) {
+            classifier = 'javadoc'
+            from javadoc.destinationDir
+        }
+        //拷贝javadoc文件
+        task copyDoc(type: Copy) {
+            from "${buildDir}/docs/"
+            into "docs"
+        }
+        //上传到JCenter所需要的源码文件
+        artifacts {
+            archives javadocJar
+            archives sourcesJar
+        }
+        //解决 JavaDoc 中文注释生成失败的问题
+        tasks.withType(Javadoc) {
+            options.addStringOption('Xdoclint:none', '-quiet')
+            options.addStringOption('encoding', 'UTF-8')
+            options.addStringOption('charSet', 'UTF-8')
+        }
+        //发布到 Bintray
+        publish {
+            userOrg = 'f1ght1n9' //organization id 企业名称或ID
+            groupId = 'com.readboy.baselibrary' //以后访问 jcenter上此项目的路径，一般和库项目的包名一致
+            artifactId = 'component' //bintray.com 创建的 Package 名
+            publishVersion = '1.0.0' //版本号
+            desc = '关于基础组件' //版本说明，随意
+            website = 'https://github.com/L1uj1awe1/BaseLibrary.git' //关于这个开源项目的网站，随意
         }
     }
 }
