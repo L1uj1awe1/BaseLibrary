@@ -1,7 +1,10 @@
 package com.readboy.baselibrary
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.lreadboy.ibbasedatabase.BaseDatabaseActivity
+import kotlinx.android.synthetic.main.activity_main.*
 
 /**
  * https://www.jianshu.com/p/6c1d2688ed2d
@@ -13,5 +16,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        btn.setOnClickListener {
+            startActivity(Intent(this, BaseDatabaseActivity::class.java))
+        }
     }
 }
