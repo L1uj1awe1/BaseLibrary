@@ -36,7 +36,7 @@ object NetworkWedget {
      * @aim 网络断开 提示框
      */
     fun checkNetworkReachable(context: Context) {
-        if (NetworkHelper.isMobileNetwork(context)) {
+        if (!NetworkHelper.isNetworkReachable(context)) {
             AlertDialog.Builder(context)
                     .setCancelable(true)
                     .setTitle("网络提示")
