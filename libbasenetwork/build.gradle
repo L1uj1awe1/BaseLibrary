@@ -28,6 +28,10 @@ android {
         }
     }
 
+    lintOptions {
+        abortOnError false
+    }
+
     //解决 JavaDoc 中文注释生成失败的问题
     tasks.withType(Javadoc) {
         options.addStringOption('Xdoclint:none', '-quiet')

@@ -2,9 +2,8 @@ if (isBuildLibrary) {
     apply plugin: 'com.android.application'
 } else {
     apply plugin: 'com.android.library'
+    apply plugin: 'com.novoda.bintray-release'
 }
-
-apply plugin: 'com.novoda.bintray-release'
 
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
@@ -42,6 +41,14 @@ android {
         }
     }
 
+    lintOptions {
+        abortOnError false
+    }
+
+    tasks.withType(Javadoc).all {
+        enabled = false
+    }
+
     if (!isBuildLibrary) {
         //生成源文件
         task sourcesJar(type: Jar) {
@@ -50,6 +57,7 @@ android {
         }
         //生成Javadoc文档
         task javadoc(type: Javadoc) {
+            excludes = ['**/*.kt']
             source = android.sourceSets.main.java.srcDirs
             classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
         }
@@ -76,7 +84,7 @@ android {
         }
         //发布到 Bintray
         publish {
-            userOrg = 'futuredeveloper' //bintray.com 注册的用户名
+            userOrg = 'f1ght1n9' //organization id 企业名称或ID
             groupId = 'com.readboy.baselibrary' //以后访问 jcenter上此项目的路径，一般和库项目的包名一致
             artifactId = 'BaseLibrary' //bintray.com 创建的 Package 名
             publishVersion = '1.0.0' //版本号
