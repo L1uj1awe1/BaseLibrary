@@ -1,4 +1,4 @@
-if (isBuildLibrary) {
+if (isBuildLibraryNetwork) {
     apply plugin: 'com.android.application'
 } else {
     apply plugin: 'com.android.library'
@@ -33,7 +33,7 @@ android {
 
     sourceSets {
         main {
-            if (isBuildLibrary) {
+            if (isBuildLibraryNetwork) {
                 manifest.srcFile 'src/main/manifest/debug/AndroidManifest.xml'
             } else {
                 manifest.srcFile 'src/main/manifest/release/AndroidManifest.xml'
@@ -49,7 +49,7 @@ android {
         enabled = false
     }
 
-    if (!isBuildLibrary) {
+    if (!isBuildLibraryNetwork) {
         //生成源文件
         task sourcesJar(type: Jar) {
             from android.sourceSets.main.java.srcDirs

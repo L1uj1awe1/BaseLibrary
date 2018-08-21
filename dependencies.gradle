@@ -4,4 +4,14 @@ ext {
 
     isBuildLibrary = false
 
+    isBuildLibraryNetwork = true
+
+    isBuildLibraryDatabase = true
+
+    isBuildLibraryUI = false
+
+    isBuildLibraryComponent = true
+
+    isBuildLibraryPicture = true
+
 }

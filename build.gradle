@@ -24,13 +24,6 @@ allprojects {
         mavenCentral()
         maven { url 'https://f1ght1n9.bintray.com/maven' }
     }
-
-    //fix javadoc build fail because of china decode`
-    tasks.withType(Javadoc) {
-        options.addStringOption('Xdoclint:none', '-quiet')
-        options.addStringOption('encoding', 'UTF-8')
-        options.addStringOption('charSet', 'UTF-8')
-    }
 }
 
 task clean(type: Delete) {

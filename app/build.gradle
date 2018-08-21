@@ -37,11 +37,6 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
 
-    if (!isBuildLibrary) {
-        implementation project(':libbaseui')
-        implementation project(':libbasenetwork')
-        implementation project(':libbasepicture')
-        implementation project(':libbasedatabase')
-        implementation project(':libbasecomponent')
-    }
+    implementation 'com.readboy.baselibrary:network:1.0.0'
+    implementation 'com.readboy.baselibrary:ui:1.0.0'
 }
