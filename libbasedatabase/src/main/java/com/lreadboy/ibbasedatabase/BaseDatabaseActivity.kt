@@ -2,6 +2,7 @@ package com.lreadboy.ibbasedatabase
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.readboy.ibbasedatabase.R
 
 class BaseDatabaseActivity : AppCompatActivity() {
 
