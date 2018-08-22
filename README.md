@@ -16,7 +16,7 @@ Android组件化，主要解耦模块包含 **业务组件 Component** 和 **基
 ## 基础库类型
 
 ---
-### 1、LibBaseUI - UI资源库
+### 1、[LibBaseUI - UI资源库](https://github.com/L1uj1awe1/BaseLibrary/tree/master/libbaseui)
  - 通用的 **Style、Theme**
  - 通用的 **Color、Dimen、String**
  - 通用的 **Layout**
