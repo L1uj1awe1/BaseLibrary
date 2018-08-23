@@ -1,9 +1,7 @@
 package com.readboy.baselibrary
 
-import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import com.lreadboy.ibbasedatabase.BaseDatabaseActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 /**
@@ -18,7 +16,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         btn.setOnClickListener {
-            startActivity(Intent(this, BaseDatabaseActivity::class.java))
         }
     }
 }

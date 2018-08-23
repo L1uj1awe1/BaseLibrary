@@ -57,7 +57,7 @@ implementation 'com.readboy.baselibrary:picture:1.0.0'
 ```
 
 ---
-### 5、LibBaseComponent - 基础组件库
+### 5、[LibBaseComponent - 基础组件库](https://github.com/L1uj1awe1/BaseLibrary/tree/master/libbasecomponent)
  - 日志库 Logger、Timber
  - 权限管理 RxPermission
 
@@ -135,46 +135,55 @@ if (isBuildLibrary) {
 
 ```gradle
 
-//    lintOptions {
-//        abortOnError false
-//    }
-//    // javadoc编译失败，可以考虑去除javadoc
-//    tasks.withType(Javadoc).all {
-//        enabled = false
-//    }
+    lintOptions {
+        abortOnError false
+    }
 
     if (!isBuildLibrary) {
+
         //生成源文件
         task sourcesJar(type: Jar) {
             from android.sourceSets.main.java.srcDirs
             classifier = 'sources'
         }
+
         //生成Javadoc文档
         task javadoc(type: Javadoc) {
             source = android.sourceSets.main.java.srcDirs
             classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
         }
+
         //文档打包成jar
         task javadocJar(type: Jar, dependsOn: javadoc) {
             classifier = 'javadoc'
             from javadoc.destinationDir
         }
+
         //拷贝javadoc文件
         task copyDoc(type: Copy) {
             from "${buildDir}/docs/"
             into "docs"
         }
+
         //上传到JCenter所需要的源码文件
         artifacts {
             archives javadocJar
             archives sourcesJar
         }
+
         //解决 JavaDoc 中文注释生成失败的问题
         tasks.withType(Javadoc) {
             options.addStringOption('Xdoclint:none', '-quiet')
             options.addStringOption('encoding', 'UTF-8')
             options.addStringOption('charSet', 'UTF-8')
+
+            excludes = ['**/*.kt']
         }
+
+//        tasks.withType(Javadoc).all {
+//            enabled = false
+//        }
+
         //发布到 Bintray
         publish {
             userOrg = 'f1ght1n9' //organization id 企业名称或ID
