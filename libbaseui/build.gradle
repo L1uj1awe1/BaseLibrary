@@ -29,7 +29,7 @@ android {
         }
     }
 
-    resourcePrefix "libbaseui_"
+    resourcePrefix "ui_"
 
     sourceSets {
         main {
