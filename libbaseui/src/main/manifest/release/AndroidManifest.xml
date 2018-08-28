@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.readboy.libbaseui">
 
+    <uses-permission android:name="android.permission.EXPAND_STATUS_BAR" />
+
     <application>
         <activity android:name=".BaseUIActivity"></activity>
         <activity android:name=".activity.SwipeBackActivity"></activity>

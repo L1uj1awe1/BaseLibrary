@@ -2,6 +2,7 @@ package com.readboy.libbaseui
 
 import android.os.Bundle
 import com.readboy.libbaseui.activity.SwipeBackActivity
+import com.readboy.libbaseui.bar.BarHelper
 
 class BaseUIActivity : SwipeBackActivity() {
 
