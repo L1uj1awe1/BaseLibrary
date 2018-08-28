@@ -5,11 +5,10 @@ import android.os.Bundle
 import android.util.Log
 import com.readboy.ibbasenetwork.helper.NetworkHelper
 import com.readboy.ibbasenetwork.http.HttpManager
-import com.readboy.ibbasenetwork.wedget.NetworkWedget
 import kotlinx.android.synthetic.main.network_activity_lib_base_network.*
+import okhttp3.*
+import java.io.IOException
 
-// todo 不知道网络基础库，对于不同header怎么处理，无从下手
-// todo 不知道，那些才是最基础的网络依赖库，例如retrofit来说，无从下手
 class LibBaseNetworkActivity : AppCompatActivity(), HttpManager.HttpCallback {
 
     private val TAG = "LibBaseNetworkActivity"
@@ -37,30 +36,78 @@ class LibBaseNetworkActivity : AppCompatActivity(), HttpManager.HttpCallback {
         Log.e(TAG, "根据 WiFi 获取服务端 IP 地址 = ${NetworkHelper.getServerAddressByWifi()}")
 
         btn_test.setOnClickListener {
-            requestForHttp()
+            requestForHttpURLConnection()
         }
 
         btn_test2.setOnClickListener {
-            NetworkHelper.openWifiSettings(this)
+            Thread({
+                requestForOkHttpSync()
+            }).start()
         }
 
         btn_test3.setOnClickListener {
-            NetworkHelper.setWifiEnabled(true)
+            requestForOkHttpAsync()
         }
     }
 
     /**
-     * http 使用例子
+     * HttpURLConnection 使用例子
      */
-    private fun requestForHttp() {
+    private fun requestForHttpURLConnection() {
         mHttpManager = HttpManager()
         mHttpManager?.execute(
                 "http://www.zhbuswx.com/RealTime/GetRealTime?id=B9&fromStation=前山总站&_=${System.currentTimeMillis()}",
                 this)
     }
-
     override fun onHttpRequestResult(result: String?) {
         Log.e(TAG, "onHttpRequestResult  result = " + result)
+    }
+
+    /**
+     * OkHttp Sync 使用例子
+     */
+    private fun requestForOkHttpSync(): String? {
+        try {
+            val url =  "http://www.zhbuswx.com/RealTime/GetRealTime?id=B9&fromStation=前山总站&_=${System.currentTimeMillis()}"
+            val okHttpClient = OkHttpClient.Builder().build()
+            val request = Request.Builder()
+                    .url(url)
+                    .build()
+
+            val response = okHttpClient.newCall(request).execute()
+            Log.e(TAG, "sync response = ${response.body()?.string()}")
+            return response.body()?.string()
+        } catch (e: Exception) {
+            e.printStackTrace()
+            Log.e(TAG, "sync response = null")
+            return null
+        }
+    }
+
+    /**
+     * OkHttp Async 使用例子
+     */
+    private fun requestForOkHttpAsync() {
+        try {
+            val url =  "http://www.zhbuswx.com/RealTime/GetRealTime?id=B9&fromStation=前山总站&_=${System.currentTimeMillis()}"
+            val okHttpClient = OkHttpClient.Builder().build()
+            val request = Request.Builder()
+                    .url(url)
+                    .build()
+
+            okHttpClient.newCall(request).enqueue(object : Callback {
+                override fun onFailure(call: Call?, e: IOException?) {
+                    Log.e(TAG, "async response = onFailure")
+                }
+
+                override fun onResponse(call: Call?, response: Response?) {
+                    Log.e(TAG, "async response = ${response?.body()?.string()}")
+                }
+
+            })
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
     }
 
 }
