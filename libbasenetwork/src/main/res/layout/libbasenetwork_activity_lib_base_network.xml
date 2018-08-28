@@ -7,6 +7,24 @@
         android:id="@+id/btn_test"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"/>
+        android:layout_centerInParent="true"
+        android:text="requestForHttp"/>
+
+
+    <Button
+        android:id="@+id/btn_test2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/btn_test"
+        android:text="openWifiSettings"/>
+
+    <Button
+        android:id="@+id/btn_test3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/btn_test2"
+        android:text="setWifiEnabled"/>
 
 </RelativeLayout>

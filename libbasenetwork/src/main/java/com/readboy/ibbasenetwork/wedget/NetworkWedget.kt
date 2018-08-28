@@ -19,7 +19,7 @@ object NetworkWedget {
      * @aim 4G 流量提示框
      */
     fun checkMobileNetwork(context: Context) {
-        if (NetworkHelper.isMobileNetwork(context)) {
+        if (NetworkHelper.is4G()) {
             AlertDialog.Builder(context)
                     .setCancelable(true)
                     .setTitle("网络提示")
@@ -36,7 +36,7 @@ object NetworkWedget {
      * @aim 网络断开 提示框
      */
     fun checkNetworkReachable(context: Context) {
-        if (!NetworkHelper.isNetworkReachable(context)) {
+        if (!NetworkHelper.isConnected()) {
             AlertDialog.Builder(context)
                     .setCancelable(true)
                     .setTitle("网络提示")
