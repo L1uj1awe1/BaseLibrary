@@ -53,14 +53,16 @@ implementation 'com.readboy.baselibrary:network:1.0.5'
 ---
 ## Receiver
 
- - ConnectivityManager 监听
-  - 当前WI-FI连接可用
-  - 当前移动数据网络连接可用
-  - 当前没有网络连接，请确保您已经打开网络
+### ConnectivityManager
 
- - WifiManager 监听
-  - 当前WI-FI连接可用
-  - 当前WI-FI连接断开
+ - 当前WI-FI连接可用
+ - 当前移动数据网络连接可用
+ - 当前没有网络连接，请确保您已经打开网络
+
+### WifiManager
+
+ - 当前WI-FI连接可用
+ - 当前WI-FI连接断开
   
 ---
 ## Wedget
@@ -71,7 +73,7 @@ implementation 'com.readboy.baselibrary:network:1.0.5'
 ---
 ## Socket
 
- WebSocketClient 使用封装
+  - WebSocketClient 使用封装
 
 ---
 ## Http
