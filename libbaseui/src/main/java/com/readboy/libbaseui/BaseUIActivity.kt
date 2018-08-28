@@ -1,9 +1,9 @@
 package com.readboy.libbaseui
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.readboy.libbaseui.activity.SwipeBackActivity
 
-class BaseUIActivity : AppCompatActivity() {
+class BaseUIActivity : SwipeBackActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

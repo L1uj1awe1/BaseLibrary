@@ -4,6 +4,7 @@
 
     <application>
         <activity android:name=".BaseUIActivity"></activity>
+        <activity android:name=".activity.SwipeBackActivity"></activity>
     </application>
 
 </manifest>
