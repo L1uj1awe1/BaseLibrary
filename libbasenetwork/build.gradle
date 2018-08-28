@@ -29,7 +29,7 @@ android {
         }
     }
 
-    resourcePrefix "libbasenetwork_"
+    resourcePrefix "network_"
 
     sourceSets {
         main {

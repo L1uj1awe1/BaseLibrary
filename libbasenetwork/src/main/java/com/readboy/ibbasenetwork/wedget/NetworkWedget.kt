@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.provider.Settings
 import android.support.v7.app.AlertDialog
+import com.readboy.ibbasenetwork.R
 import com.readboy.ibbasenetwork.helper.NetworkHelper
 
 /**
@@ -22,12 +23,12 @@ object NetworkWedget {
         if (NetworkHelper.is4G()) {
             AlertDialog.Builder(context)
                     .setCancelable(true)
-                    .setTitle("网络提示")
-                    .setMessage("您正在使用移动数据网络，继续使用可能会消耗大量流量")
-                    .setNegativeButton("网络设置", { _, _ ->
-                        context.startActivity(Intent(Settings.ACTION_WIFI_SETTINGS))
+                    .setTitle(R.string.network_dialog_title)
+                    .setMessage(R.string.network_dialog_4g_msg)
+                    .setNegativeButton(R.string.network_dialog_network_settings, { _, _ ->
+                        NetworkHelper.openWifiSettings(context)
                     })
-                    .setPositiveButton("继续使用", null)
+                    .setPositiveButton(R.string.network_dialog_network_ignore, null)
                     .show()
         }
     }
@@ -39,12 +40,12 @@ object NetworkWedget {
         if (!NetworkHelper.isConnected()) {
             AlertDialog.Builder(context)
                     .setCancelable(true)
-                    .setTitle("网络提示")
-                    .setMessage("当前没有网络连接，请确保您已经打开网络")
-                    .setNegativeButton("网络设置", { _, _ ->
-                        context.startActivity(Intent(Settings.ACTION_WIFI_SETTINGS))
+                    .setTitle(R.string.network_dialog_title)
+                    .setMessage(R.string.network_dialog_network_msg)
+                    .setNegativeButton(R.string.network_dialog_network_settings, { _, _ ->
+                        NetworkHelper.openWifiSettings(context)
                     })
-                    .setPositiveButton("知道了", null)
+                    .setPositiveButton(R.string.network_dialog_network_ignore, null)
                     .show()
         }
     }

@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">LibBaseNetwork</string>
+    <string name="network_app_name">LibBaseNetwork</string>
+
+    <string name="network_dialog_title">网络提示</string>
+    <string name="network_dialog_network_settings">网络设置</string>
+    <string name="network_dialog_network_ignore">继续使用</string>
+    <string name="network_dialog_4g_msg">您正在使用移动数据网络，继续使用可能会消耗大量流量</string>
+    <string name="network_dialog_network_msg">当前没有可用网络，请确保您已经打开网络连接</string>
 </resources>

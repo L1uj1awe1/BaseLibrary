@@ -26,7 +26,7 @@ class HttpManager {
      * @param url 请求连接，需要自行拼接请求参数
      * @param callback 网络连接监听，需要继承重写回调接口
      */
-    fun execute(url: String, callback: HttpCallback? = null) {
+    fun execute(url: String, callback: HttpCallback?) {
         mUrl = url
         listener = callback
 

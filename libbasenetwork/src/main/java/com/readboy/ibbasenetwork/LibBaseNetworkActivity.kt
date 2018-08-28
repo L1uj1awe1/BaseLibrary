@@ -5,7 +5,8 @@ import android.os.Bundle
 import android.util.Log
 import com.readboy.ibbasenetwork.helper.NetworkHelper
 import com.readboy.ibbasenetwork.http.HttpManager
-import kotlinx.android.synthetic.main.libbasenetwork_activity_lib_base_network.*
+import com.readboy.ibbasenetwork.wedget.NetworkWedget
+import kotlinx.android.synthetic.main.network_activity_lib_base_network.*
 
 // todo 不知道网络基础库，对于不同header怎么处理，无从下手
 // todo 不知道，那些才是最基础的网络依赖库，例如retrofit来说，无从下手
@@ -17,7 +18,7 @@ class LibBaseNetworkActivity : AppCompatActivity(), HttpManager.HttpCallback {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.libbasenetwork_activity_lib_base_network)
+        setContentView(R.layout.network_activity_lib_base_network)
 
         Log.e(TAG, "判断网络是否连接 = ${NetworkHelper.isConnected()}")
         Log.e(TAG, "判断网络是否可用 = ${NetworkHelper.isAvailableByPing()}")

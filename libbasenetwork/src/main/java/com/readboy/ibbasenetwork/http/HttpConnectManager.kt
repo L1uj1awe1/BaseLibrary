@@ -1,6 +1,5 @@
 package com.readboy.ibbasenetwork.http
 
-import com.readboy.ibbasenetwork.wedget.NetworkWedget
 import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStreamReader
