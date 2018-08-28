@@ -54,14 +54,14 @@ implementation 'com.readboy.baselibrary:network:1.0.5'
 ## Receiver
 
 > - ConnectivityManager 监听
-  - 当前WI-FI连接可用
-  - 当前移动数据网络连接可用
-  - 当前没有网络连接，请确保您已经打开网络
-
+>  - 当前WI-FI连接可用
+>  - 当前移动数据网络连接可用
+>  - 当前没有网络连接，请确保您已经打开网络
+> 
 > - WifiManager 监听
-  - 当前WI-FI连接可用
-  - 当前WI-FI连接断开
-
+>  - 当前WI-FI连接可用
+>  - 当前WI-FI连接断开
+  
 ---
 ## Wedget
 
@@ -83,8 +83,9 @@ implementation 'com.readboy.baselibrary:network:1.0.5'
 ## Thanks
 
 > 感谢以下开源项目的作者，有些功能也用到你们的代码完成。对此如果有什么意见请与我联系！再次感谢！
-
->[Blankj/AndroidUtilCode](https://github.com/Blankj/AndroidUtilCode/blob/master/utilcode/README-CN.md)
+> 
+> [Blankj/AndroidUtilCode](https://github.com/Blankj/AndroidUtilCode/blob/master/utilcode/README-CN.md)
 
 ---
 标签： Android
+
