@@ -113,10 +113,11 @@ dependencies {
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
 
-    implementation 'com.jude:swipebackhelper:3.1.2' // Swipe Back Activity
-    implementation 'com.blankj:utilcode:1.19.3' // Android Util Library
+    implementation 'com.jude:swipebackhelper:3.1.2' // Swipe Back Activity - https://github.com/Jude95/SwipeBackHelper
+    implementation 'com.blankj:utilcode:1.19.3' // Android Util Library - https://github.com/Blankj/AndroidUtilCode
 
-    api 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-14' // 下拉刷新
+    api 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-14' // 下拉刷新 - https://github.com/scwang90/SmartRefreshLayout
     api 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-14' // 下拉刷新header，使用默认header可以不要这行
     api "com.android.support:recyclerview-v7:27.1.1" // RecyclerView
+    api 'com.youth.banner:banner:1.4.10'  // banner - https://github.com/youth5201314/banner
 }
