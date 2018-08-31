@@ -95,8 +95,8 @@ android {
             userOrg = 'f1ght1n9' //organization id 企业名称或ID
             groupId = 'com.readboy.baselibrary' //以后访问 jcenter上此项目的路径，一般和库项目的包名一致
             artifactId = 'ui' //bintray.com 创建的 Package 名
-            publishVersion = '1.0.0' //版本号
-            desc = '任何关于UI的基础库' //版本说明，随意
+            publishVersion = '1.0.1' //版本号
+            desc = 'banner、bar、recycler、swipeback' //版本说明，随意
             website = 'https://github.com/L1uj1awe1/BaseLibrary.git' //关于这个开源项目的网站，随意
         }
     }
@@ -116,8 +116,8 @@ dependencies {
     implementation 'com.jude:swipebackhelper:3.1.2' // Swipe Back Activity - https://github.com/Jude95/SwipeBackHelper
     implementation 'com.blankj:utilcode:1.19.3' // Android Util Library - https://github.com/Blankj/AndroidUtilCode
 
-    api 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-14' // 下拉刷新 - https://github.com/scwang90/SmartRefreshLayout
-    api 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-14' // 下拉刷新header，使用默认header可以不要这行
-    api "com.android.support:recyclerview-v7:27.1.1" // RecyclerView
+    api 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.3' // 下拉刷新 - https://github.com/scwang90/SmartRefreshLayout
+    api 'com.scwang.smartrefresh:SmartRefreshHeader:1.0.3' // 下拉刷新header，使用默认header可以不要这行
+    api "com.android.support:recyclerview-v7:$support_version"
     api 'com.youth.banner:banner:1.4.10'  // banner - https://github.com/youth5201314/banner
 }

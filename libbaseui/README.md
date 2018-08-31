@@ -6,12 +6,12 @@
 ### **通用**的 **第三方 自定义 View**
 
 > - [Activity 侧滑退出 ★★★★★](https://github.com/Jude95/SwipeBackHelper)
-> - [StatusBarUtil 沉浸式状态栏](https://github.com/laobie/StatusBarUtil)
-> - [Toasty 冒泡提示框](https://github.com/GrenderG/Toasty)
 > - [SmartRefreshLayout 下拉刷新 ★★★★★](https://github.com/scwang90/SmartRefreshLayout)
 
 ### **常用**的 **第三方 自定义 View**
 
+> - [StatusBarUtil 沉浸式状态栏](https://github.com/laobie/StatusBarUtil)
+> - [Toasty 冒泡提示框](https://github.com/GrenderG/Toasty)
 > - [Chart 类图表](https://github.com/PhilJay/MPAndroidChart)
 > - [banner 轮播图](https://github.com/youth5201314/banner)
 > - [LoadSir 加载状态反馈库](https://github.com/KingJA/LoadSir)
