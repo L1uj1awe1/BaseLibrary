@@ -20,7 +20,6 @@ class WebSocketManager(serverUrl: String) {
     private val TAG = "WebSocketManager"
 
     private var mWebSocketClient: WebSocketClient? = null
-    private var isUserClose = false
     private val mHandler = Handler(Looper.getMainLooper())
 
     interface WebSocketListener{
@@ -60,8 +59,8 @@ class WebSocketManager(serverUrl: String) {
                  * 考虑到 错误关闭、主动关闭 两种形式，再重写回调中可添加判断，如果是错误关闭，可以尝试 reconnect 重连
                  */
                 override fun onClose(code: Int, reason: String, remote: Boolean) {
-                    Log.w(TAG, "WebSocketClient onClose code = $code , reason = $reason , isUserClose = $isUserClose")
-                    if (!isUserClose && mWebSocketClient != null) {
+                    Log.w(TAG, "WebSocketClient onClose code = $code , reason = $reason")
+                    if (code != SocketCloseCodeManager.CODE_CLOSE_NORMAL && mWebSocketClient != null) {
                         Log.w(TAG, "WebSocketClient reconnect")
                         mHandler.post {
                             reconnect()
