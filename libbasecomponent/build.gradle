@@ -115,4 +115,5 @@ dependencies {
 
     api 'com.github.tbruyelle:rxpermissions:0.10.2' // 权限管理 https://github.com/tbruyelle/RxPermissions
     api 'com.orhanobut:logger:2.2.0' // 日志库 https://github.com/orhanobut/logger
+    api 'com.blankj:utilcode:1.20.1' // 工具库 https://github.com/Blankj/AndroidUtilCode
 }
