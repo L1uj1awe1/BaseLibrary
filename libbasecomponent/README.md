@@ -6,6 +6,7 @@
 > - [Logger 日志库](https://github.com/orhanobut/logger)
 > - [AndroidUtilCode 工具库 ★★★★★](https://github.com/Blankj/AndroidUtilCode)
 > - [Lazy 工具库](https://github.com/l123456789jy/Lazy)
+> - [RxPermissions 权限管理库](https://github.com/tbruyelle/RxPermissions)
 
 ### **常用** 的 第三方依赖库
 

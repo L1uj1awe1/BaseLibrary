@@ -112,4 +112,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+
+    api 'com.github.tbruyelle:rxpermissions:0.10.2' // 权限管理 https://github.com/tbruyelle/RxPermissions
+    api 'com.orhanobut:logger:2.2.0' // 日志库 https://github.com/orhanobut/logger
 }
