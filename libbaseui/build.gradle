@@ -92,11 +92,11 @@ android {
 
         //发布到 Bintray
         publish {
-            userOrg = 'f1ght1n9' //organization id 企业名称或ID
+            userOrg = 'f1ght1n9code' //organization id 企业名称或ID
             groupId = 'com.readboy.baselibrary' //以后访问 jcenter上此项目的路径，一般和库项目的包名一致
             artifactId = 'ui' //bintray.com 创建的 Package 名
-            publishVersion = '1.0.1' //版本号
-            desc = 'banner、bar、recycler、swipeback' //版本说明，随意
+            publishVersion = '1.0.0' //版本号
+            desc = 'UI 基础库初始化' //版本说明，随意
             website = 'https://github.com/L1uj1awe1/BaseLibrary.git' //关于这个开源项目的网站，随意
         }
     }

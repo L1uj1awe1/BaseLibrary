@@ -224,6 +224,8 @@ allprojects {
 
 5、[BaseLibrary Bintray 地址](https://bintray.com/f1ght1n9)
 
+5、[Bintray 个人注册网址](https://bintray.com/signup/oss)
+
 6、[参考博客](https://drprincess.github.io/2018/02/01/Android-%E5%8F%91%E5%B8%83%E9%A1%B9%E7%9B%AE%E5%88%B0%E5%88%B0%20JCenter%20%E4%BB%93%E5%BA%93/)
 
 标签： Android
