@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="ui_colorPrimary">#3F51B5</color>
-    <color name="ui_colorPrimaryDark">#303F9F</color>
-    <color name="ui_colorAccent">#FF4081</color>
+
+    <color name="ui_blue_1">#3f7fff</color>
+    <color name="ui_blue_2">#6699ff</color>
+
+    <color name="ui_gray_1">#3B3F4F</color>
+    <color name="ui_gray_2">#1E2433</color>
+
+    <color name="ui_red">#FF4081</color>
+
+    <color name="ui_white">#FFFFFF</color>
+    <color name="ui_black">#000000</color>
+
+    <color name="ui_green_bg">#d1e6ea</color>
+    <color name="ui_green">#33E3A3</color>
+
+    <color name="ui_yellow">#fdb400</color>
 </resources>
