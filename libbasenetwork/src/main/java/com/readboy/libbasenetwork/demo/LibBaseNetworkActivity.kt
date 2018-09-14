@@ -1,11 +1,14 @@
-package com.readboy.libbasenetwork
+package com.readboy.libbasenetwork.demo
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import com.readboy.ibbasenetwork.R
+import com.readboy.libbasenetwork.demo.retrofit.DemoApi
 import com.readboy.libbasenetwork.helper.NetworkHelper
 import com.readboy.libbasenetwork.http.HttpManager
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.network_activity_lib_base_network.*
 import okhttp3.*
 import java.io.IOException
@@ -109,6 +112,20 @@ class LibBaseNetworkActivity : AppCompatActivity(), HttpManager.HttpCallback {
         } catch (e: Exception) {
             e.printStackTrace()
         }
+    }
+
+
+    private fun requestForRetrofit() {
+        DemoApi.server.demo("param1", "param2")
+                .retry(2)
+                .unsubscribeOn(Schedulers.io()) //被观察者在子线程中处理
+                .subscribeOn(Schedulers.io()) //被观察者在子线程中处理
+                .observeOn(AndroidSchedulers.mainThread()) //将结果发送到主线程中处理，需要引入RxAndroid
+                .subscribe({
+                    // TODO 请求成功，直接返回 DemoBean类 型
+                }, {
+                    // TODO 请求失败
+                })
     }
 
 }

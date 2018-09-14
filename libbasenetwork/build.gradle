@@ -92,12 +92,14 @@ android {
 
         //发布到 Bintray
         publish {
-            userOrg = 'f1ght1n9code' //organization id 企业名称或ID
-            groupId = 'com.readboy.baselibrary' //以后访问 jcenter上此项目的路径，一般和库项目的包名一致
-            artifactId = 'network' //bintray.com 创建的 Package 名
-            publishVersion = '1.0.0' //版本号
-            desc = 'network 基础库初始化' //版本说明，随意
+            userOrg = 'f1ght1n9code' // 用户名，小写
+            groupId = 'com.readboy.baselibrary' // 以后访问 JCenter上此项目的路径，一般和库项目的包名一致
+            artifactId = 'network' // Bintray.com 创建的 Package 名
+            publishVersion = '1.0.6' // 版本号
+            desc = '引入 Retrofit 2.0 依赖和 Demo' //版本说明，随意
             website = 'https://github.com/L1uj1awe1/BaseLibrary.git' //关于这个开源项目的网站，随意
+
+            // implementation 'com.readboy.baselibrary:network:1.0.6'
         }
     }
 }
@@ -119,10 +121,18 @@ dependencies {
     // Other Utils implementation
     implementation 'com.blankj:utilcode:1.20.1' // Android Util Library
 
-    // Can inherit implementation
+    // Web Socket
     api "org.java-websocket:Java-WebSocket:1.3.8"
     api "com.google.code.gson:gson:2.8.5"
+
+    // OkHttp
     api 'com.squareup.okhttp3:okhttp:3.10.0'
+    api "com.squareup.okhttp3:logging-interceptor:3.6.0" // OkHttp 日志拦截
+
+    // Retrofit 2.0
     api 'com.squareup.retrofit2:retrofit:2.3.0'
+    api "com.squareup.retrofit2:converter-gson:2.3.0" // GsonConverterFactory
+    api "com.squareup.retrofit2:adapter-rxjava2:2.3.0" // RxJava2CallAdapterFactory
+    api "io.reactivex.rxjava2:rxandroid:2.0.1" // AndroidSchedulers.mainThread()
 
 }
