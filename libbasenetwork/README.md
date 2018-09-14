@@ -2,30 +2,20 @@
 
 关于网络部分的基础服务配置，包含：
 
- - Helper
- - Receiver
- - Wedget
- - Socket
- - Http
+* [Helper](#1)
+* [Receiver](#2)
+* [Wedget](#3)
+* [Socket](#4)
+* [Http](#5)
 
-## 使用步骤
+## 使用
 
-Step 1：根目录build.gradle:
 ```gradle
-allprojects {
-    repositories {
-        maven { url 'https://f1ght1n9.bintray.com/maven' }
-    }
-}
-```
-
-Step 2：Module目录build.gradle：
-```gradle
-implementation 'com.readboy.baselibrary:network:1.0.5'
+implementation 'com.readboy.baselibrary:network:x.x.x'
 ```
 
 ---
-## Helper
+## <h2 id="1">Helper</h2>
 
 网络相关工具
 
@@ -51,7 +41,7 @@ implementation 'com.readboy.baselibrary:network:1.0.5'
  - 根据 WiFi 获取服务端 IP 地址
 
 ---
-## Receiver
+## <h2 id="2">Receiver</h2>
 
 ### ConnectivityManager
 
@@ -63,31 +53,31 @@ implementation 'com.readboy.baselibrary:network:1.0.5'
 
  - 当前WI-FI连接可用
  - 当前WI-FI连接断开
-  
+
 ---
-## Wedget
+## <h2 id="3">Wedget</h2>
 
  - 4G 流量提示
  - 网络断开提示
 
 ---
-## Socket
+## <h2 id="4">Socket</h2>
 
   - WebSocketClient 使用封装
 
 ---
-## Http
+## <h2 id="5">Http</h2>
 
  - HttpURLConnection + AsycnTask
  - OkHttp
+ - Retrofit 2.0
 
 ---
 ## Thanks
 
  感谢以下开源项目的作者，有些功能也用到你们的代码完成。对此如果有什么意见请与我联系！再次感谢！
- 
+
 [Blankj/AndroidUtilCode](https://github.com/Blankj/AndroidUtilCode/blob/master/utilcode/README-CN.md)
 
 ---
 标签： Android
-
