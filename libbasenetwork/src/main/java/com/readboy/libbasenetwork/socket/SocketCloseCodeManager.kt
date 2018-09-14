@@ -1,4 +1,4 @@
-package com.readboy.ibbasenetwork.socket
+package com.readboy.libbasenetwork.socket
 
 /**
  * Created by liujiawei on 18-9-8.

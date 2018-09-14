@@ -1,4 +1,4 @@
-package com.readboy.ibbasenetwork.helper
+package com.readboy.libbasenetwork.helper
 
 import android.content.Context
 import android.content.Intent

@@ -1,10 +1,11 @@
-package com.readboy.ibbasenetwork
+package com.readboy.libbasenetwork
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import com.readboy.ibbasenetwork.helper.NetworkHelper
-import com.readboy.ibbasenetwork.http.HttpManager
+import com.readboy.ibbasenetwork.R
+import com.readboy.libbasenetwork.helper.NetworkHelper
+import com.readboy.libbasenetwork.http.HttpManager
 import kotlinx.android.synthetic.main.network_activity_lib_base_network.*
 import okhttp3.*
 import java.io.IOException

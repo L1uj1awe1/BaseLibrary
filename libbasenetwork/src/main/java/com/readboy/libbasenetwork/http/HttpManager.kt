@@ -1,4 +1,4 @@
-package com.readboy.ibbasenetwork.http
+package com.readboy.libbasenetwork.http
 
 import android.annotation.SuppressLint
 import android.os.AsyncTask

@@ -15,7 +15,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/network_LibBaseResAppTheme">
-        <activity android:name="com.readboy.ibbasenetwork.LibBaseNetworkActivity">
+        <activity android:name="com.readboy.libbasenetwork.LibBaseNetworkActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
