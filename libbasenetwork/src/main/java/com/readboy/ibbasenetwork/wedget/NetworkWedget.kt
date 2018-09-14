@@ -1,9 +1,9 @@
-package com.readboy.libbasenetwork.wedget
+package com.readboy.ibbasenetwork.wedget
 
 import android.content.Context
 import android.support.v7.app.AlertDialog
 import com.readboy.ibbasenetwork.R
-import com.readboy.libbasenetwork.helper.NetworkHelper
+import com.readboy.ibbasenetwork.helper.NetworkHelper
 
 /**
  * 常规的网络提示，例如：

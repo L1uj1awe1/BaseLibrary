@@ -1,4 +1,4 @@
-package com.readboy.libbasenetwork.receiver
+package com.readboy.ibbasenetwork.receiver
 
 import android.content.BroadcastReceiver
 import android.content.Context

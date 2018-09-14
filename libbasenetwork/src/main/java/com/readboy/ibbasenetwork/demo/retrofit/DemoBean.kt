@@ -1,4 +1,4 @@
-package com.readboy.libbasenetwork.demo.retrofit
+package com.readboy.ibbasenetwork.demo.retrofit
 
 /**
  * Created by liujiawei on 18-9-14.

@@ -9,7 +9,7 @@
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
 
     <application>
-        <activity android:name="com.readboy.libbasenetwork.demo.LibBaseNetworkActivity" />
+        <activity android:name="com.readboy.ibbasenetwork.demo.LibBaseNetworkActivity" />
     </application>
 
 </manifest>

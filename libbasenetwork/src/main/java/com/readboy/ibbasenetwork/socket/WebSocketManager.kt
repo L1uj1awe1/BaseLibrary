@@ -1,4 +1,4 @@
-package com.readboy.libbasenetwork.socket
+package com.readboy.ibbasenetwork.socket
 
 import android.os.Handler
 import android.os.Looper

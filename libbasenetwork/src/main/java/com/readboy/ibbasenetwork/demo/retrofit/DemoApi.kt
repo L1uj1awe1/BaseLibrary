@@ -1,4 +1,4 @@
-package com.readboy.libbasenetwork.demo.retrofit
+package com.readboy.ibbasenetwork.demo.retrofit
 
 import io.reactivex.Observable
 import retrofit2.http.GET

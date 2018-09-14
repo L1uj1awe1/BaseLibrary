@@ -1,4 +1,4 @@
-package com.readboy.libbasenetwork.http
+package com.readboy.ibbasenetwork.http
 
 import java.io.BufferedReader
 import java.io.IOException
