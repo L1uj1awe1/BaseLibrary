@@ -95,8 +95,8 @@ android {
             userOrg = 'f1ght1n9code' // 用户名，小写
             groupId = 'com.readboy.baselibrary' // 以后访问 JCenter上此项目的路径，一般和库项目的包名一致
             artifactId = 'network' // Bintray.com 创建的 Package 名
-            publishVersion = '1.0.7' // 版本号
-            desc = '重命名包名' //版本说明，随意
+            publishVersion = '1.0.8' // 版本号
+            desc = '更新WebSocket' //版本说明，随意
             website = 'https://github.com/L1uj1awe1/BaseLibrary.git' //关于这个开源项目的网站，随意
 
             // implementation 'com.readboy.baselibrary:network:1.0.6'
@@ -122,7 +122,7 @@ dependencies {
     implementation 'com.blankj:utilcode:1.20.1' // Android Util Library
 
     // Web Socket
-    api "org.java-websocket:Java-WebSocket:1.3.8"
+    api "org.java-websocket:Java-WebSocket:1.3.9"
     api "com.google.code.gson:gson:2.8.5"
 
     // OkHttp
