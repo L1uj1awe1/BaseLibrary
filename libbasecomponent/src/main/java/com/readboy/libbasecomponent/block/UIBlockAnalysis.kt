@@ -18,7 +18,7 @@ object UIBlockAnalysis {
     private val TAG_START = ">>>>> Dispatching"
     private val TAG_END = "<<<<< Finished"
 
-    fun start() {
+    fun start(daley: Long = LogMonitor.instance.TIME_BLOCK) {
 
         /**
          * Android UI线程中有个Looper，在其loop方法中会不断取出Message，调用其绑定的Handler在UI线程进行执行
@@ -32,7 +32,7 @@ object UIBlockAnalysis {
         Looper.getMainLooper().setMessageLogging { x ->
 
             if (x.startsWith(TAG_START)) {
-                LogMonitor.instance.startMonitor()
+                LogMonitor.instance.startMonitor(daley)
             }
             if (x.startsWith(TAG_END)) {
                 LogMonitor.instance.removeMonitor()

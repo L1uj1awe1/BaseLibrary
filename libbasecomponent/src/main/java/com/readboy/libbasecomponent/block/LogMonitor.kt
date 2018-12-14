@@ -10,7 +10,7 @@ class LogMonitor {
     /**
      * 卡顿触发的时间阈值
      */
-    private val TIME_BLOCK = 1000L
+    val TIME_BLOCK = 1000L
 
     private val mLogThread = HandlerThread("log")
     private val mIoHandler: Handler
@@ -32,8 +32,8 @@ class LogMonitor {
         mIoHandler = Handler(mLogThread.looper)
     }
 
-    fun startMonitor() {
-        mIoHandler.postDelayed(mLogRunnable, TIME_BLOCK)
+    fun startMonitor(daley: Long = TIME_BLOCK) {
+        mIoHandler.postDelayed(mLogRunnable, daley)
     }
 
     fun removeMonitor() {

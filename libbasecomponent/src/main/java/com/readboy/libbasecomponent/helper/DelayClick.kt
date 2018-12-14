@@ -15,7 +15,8 @@ object DelayClick {
     fun canClickByTime(delayTime: Long): Boolean {
         var ret = false
         val now = System.currentTimeMillis()
-        if ((now - lastClickTime > delayTime) || (now == lastClickTime)) {
+        val delay = now - lastClickTime
+        if (delay > delayTime || delay < 10) {
             ret = true
         }
         lastClickTime = now
