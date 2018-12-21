@@ -4,6 +4,6 @@
 
 工具库：https://github.com/Blankj/AndroidUtilCode
 
-防快速点击：DelayClick
+防快速点击：RBoyDelayClick
 
-UI卡顿检测：UIBlockAnalysis
+UI卡顿检测：RBoyUIBlockAnalysis
