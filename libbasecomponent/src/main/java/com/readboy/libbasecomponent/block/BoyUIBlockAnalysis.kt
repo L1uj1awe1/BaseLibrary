@@ -10,10 +10,10 @@ import android.os.Looper
  * Application -> onCreate() 初始化
  *
  * if (BuildConfig.DEBUG) {
- *     RBoyUIBlockAnalysis.start()
+ *     BoyUIBlockAnalysis.start()
  *  }
  */
-object RBoyUIBlockAnalysis {
+object BoyUIBlockAnalysis {
 
     private val TAG_START = ">>>>> Dispatching"
     private val TAG_END = "<<<<< Finished"

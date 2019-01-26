@@ -7,6 +7,6 @@ class BaseComponentActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.libbasecomponent_activity_base_component)
+        setContentView(R.layout.comp_activity_base_component)
     }
 }

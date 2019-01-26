@@ -11,7 +11,7 @@ class LogMonitor {
      * 卡顿触发的时间阈值
      */
     val TIME_BLOCK = 1000L
-    val TAG = "RBoyUIBlockAnalysis"
+    val TAG = "BoyUIBlockAnalysis"
 
     private val mLogThread = HandlerThread("log")
     private val mIoHandler: Handler
