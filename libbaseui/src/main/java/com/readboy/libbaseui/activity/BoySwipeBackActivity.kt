@@ -7,7 +7,7 @@ import com.jude.swipbackhelper.SwipeBackHelper
 /**
  * 滑动退出 Activity
  */
-open class SwipeBackActivity : AppCompatActivity() {
+open class BoySwipeBackActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

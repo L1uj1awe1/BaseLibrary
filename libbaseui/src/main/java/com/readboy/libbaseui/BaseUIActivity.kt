@@ -1,7 +1,7 @@
 package com.readboy.libbaseui
 
 import android.os.Bundle
-import com.readboy.libbaseui.activity.SwipeBackActivity
+import com.readboy.libbaseui.activity.BoySwipeBackActivity
 
 /**
  * 基础 UI 库
@@ -18,7 +18,7 @@ import com.readboy.libbaseui.activity.SwipeBackActivity
  *
  *
  */
-class BaseUIActivity : SwipeBackActivity() {
+class BaseUIActivity : BoySwipeBackActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -6,7 +6,7 @@
 
     <application>
         <activity android:name=".BaseUIActivity"></activity>
-        <activity android:name=".activity.SwipeBackActivity"></activity>
+        <activity android:name=".activity.BoySwipeBackActivity"></activity>
     </application>
 
 </manifest>
