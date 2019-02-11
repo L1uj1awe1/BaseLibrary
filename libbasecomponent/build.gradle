@@ -109,8 +109,9 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
 
-    implementation 'com.android.support:appcompat-v7:28.0.0'
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation "com.android.support:appcompat-v7:$support_version"
+    implementation "com.android.support.constraint:constraint-layout:$constraint_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     api 'com.github.tbruyelle:rxpermissions:0.10.2' // 权限管理 https://github.com/tbruyelle/RxPermissions
     api 'com.orhanobut:logger:2.2.0' // 日志库 https://github.com/orhanobut/logger

@@ -114,9 +114,9 @@ dependencies {
     testImplementation 'junit:junit:4.12'
 
     // Android Library Support
-    implementation 'com.android.support:appcompat-v7:28.0.0'
-    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation "com.android.support:appcompat-v7:$support_version"
+    implementation "com.android.support.constraint:constraint-layout:$constraint_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     // Other Utils implementation
     implementation 'com.blankj:utilcode:1.20.1' // Android Util Library
