@@ -3,7 +3,7 @@ package com.readboy.ibbasenetwork.socket
 /**
  * Created by liujiawei on 18-9-8.
  */
-object SocketCloseCodeManager {
+object BoySocketCodeManager {
 
     // 一般来说 1006 的错误码出现的情况比较常见，该错误码一般出现在断网时。
 

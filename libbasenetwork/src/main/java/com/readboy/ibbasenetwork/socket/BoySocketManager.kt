@@ -11,13 +11,13 @@ import java.net.URI
 /**
  * WebSocket 长连接
  *
- * 1、实例化 WebSocketManager(serverUrl)
+ * 1、实例化 BoySocketManager(serverUrl)
  * 2、继承接口 WebSocketListener，重写回调
  *
  */
-class WebSocketManager(serverUrl: String) {
+class BoySocketManager(serverUrl: String) {
 
-    private val TAG = "WebSocketManager"
+    private val TAG = "BoySocketManager"
 
     private var mWebSocketClient: WebSocketClient? = null
     private val mHandler = Handler(Looper.getMainLooper())
@@ -60,7 +60,7 @@ class WebSocketManager(serverUrl: String) {
                  */
                 override fun onClose(code: Int, reason: String, remote: Boolean) {
                     Log.w(TAG, "WebSocketClient onClose code = $code , reason = $reason")
-                    if (code != SocketCloseCodeManager.CODE_CLOSE_NORMAL && mWebSocketClient != null) {
+                    if (code != BoySocketCodeManager.CODE_CLOSE_NORMAL && mWebSocketClient != null) {
                         Log.w(TAG, "WebSocketClient reconnect")
                         mHandler.post {
                             reconnect()

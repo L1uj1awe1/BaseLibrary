@@ -8,7 +8,7 @@ import com.blankj.utilcode.util.NetworkUtils
 /**
  * 与网络相关工具
  */
-object NetworkHelper {
+object BoyNetworkHelper {
 
     /**
      * @aim 打开 wifi 设置界面

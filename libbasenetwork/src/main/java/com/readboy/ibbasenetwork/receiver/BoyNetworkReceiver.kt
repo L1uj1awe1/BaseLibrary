@@ -13,7 +13,7 @@ import android.util.Log
 /**
  * 监听网络状态变化
  */
-class NetworkChangedReceiver: BroadcastReceiver() {
+class BoyNetworkReceiver: BroadcastReceiver() {
 
     private val TAG_WifiManager = "WifiManager"
     private val TAG_ConnectivityManager = "ConnectivityManager"
